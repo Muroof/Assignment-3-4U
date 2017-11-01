@@ -16,7 +16,7 @@ public class A3Q4 {
 
         // fill in the tracker array with the inputted array
         for (int i = 0; i < array.length; i++) {
-            tracker[i] = tracker[i] + 1;
+            tracker[i] = array[i] + 1;
         }
         // variables used to track positions within orignal and tracker array
         int o = 0;
