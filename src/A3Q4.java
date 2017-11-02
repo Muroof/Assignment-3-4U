@@ -11,12 +11,17 @@ public class A3Q4 {
 
     public void countingSort(int[] array) {
 
+        // variable to keep track of how many times a number is found
+        int specNumCounter = 0;
         // tracker array
         int tracker[] = new int[101];
 
-        // fill in the tracker array with the inputted array
+        // run through the tracker array counting amounts of numbers
         for (int i = 0; i < array.length; i++) {
-            tracker[i] = array[i] + 1;
+            // increase counter
+            specNumCounter = array[i];
+            // number at tracker position number counter is set to equal numvet at position number counter plus one
+            tracker[specNumCounter] = tracker[specNumCounter] + 1;
         }
         // variables used to track positions within orignal and tracker array
         int o = 0;
@@ -34,9 +39,10 @@ public class A3Q4 {
                 tracker[t]--;
                 // add one to integer o
                 o++;
+            } else {
+                // if tracker at position int t is not greater than 0, add one to int t
+                t++;
             }
-            // if tracker at position int t is not greater than 0, add one to int t
-            t++;
         }
     }
 
@@ -47,10 +53,10 @@ public class A3Q4 {
         A3Q4 test = new A3Q4();
 
         // making a random array of ints
-        int[] numbers = new int[101];
+        int[] numbers = new int[100];
         for (int i = 0; i < numbers.length; i++) {
             // make a random number
-            numbers[i] = (int) (Math.random() * 42);
+            numbers[i] = (int) (Math.random() * 101);
         }
         System.out.println("BEFORE:");
         for (int i = 0; i < numbers.length; i++) {
@@ -64,7 +70,6 @@ public class A3Q4 {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
-
     }
 
 }
